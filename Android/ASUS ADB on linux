@@ -1,0 +1,21 @@
+
+
+1. sudo apt install android-tools-adb android-tools-fastboot
+2. adb version
+3. sudo adb start-server
+(sudo adb kill-server)
+4. adb devices
+  Output example:
+    List of devices attached
+    0123456789ABCDEF	sideload
+
+5. extract boot.img and recovery.img from rom zip package.
+6. Press Power + Volume Up button on phone
+6. boot to bootloader and flash boot.img and recovery.img, cmd : 
+  7. fastboot flash boot boot.img
+  8. fastboot flash recovery recovery.img
+9. access to recovery mode (Press Power + Volume Up button to access recovery menu) and use adb tools then adb sideload the full firmware .zip (from website).
+  10. adb sideload rom.zip
+  Ouput example:
+    adb sideload rom.zip
+    serving: 'rom.zip'  (~42%)
